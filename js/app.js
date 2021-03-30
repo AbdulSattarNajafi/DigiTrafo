@@ -1,33 +1,24 @@
 //Collapse Menu and Menu links
 function menuToggle() {
   const collBtns = document.querySelectorAll(".collapsible");
-  let menuLinks = document.querySelectorAll('.menu_links');
+  const menuLinks = document.querySelectorAll('.menu_links');
   
   collBtns.forEach(collBtn => {
     collBtn.addEventListener('click', function(e) {
       e.preventDefault();
       const content = this.nextElementSibling;
+      const iconRight = this.children[1];
 
+      const iconDown = document.querySelector('.active_icon')
       const activeContent = document.querySelector('.active_menu');
-      if(activeContent) {
-        activeContent.classList.remove('active_menu');
-      }
+
+      if(activeContent) activeContent.classList.remove('active_menu');
+      if(iconDown) iconDown.classList.remove('active_icon')
+      
+      iconRight.classList.toggle('active_icon')
       content.classList.toggle('active_menu');
     })
   })
-  // let i;
-  // for (i = 0; i < collBtns.length; i++) {
-  //   collBtns[i].addEventListener("click", function() {
-  
-  //     this.classList.toggle("active_menu");
-  //     const content = this.nextElementSibling;
-  //     if (content.style.display === "block") {
-  //       content.style.display = "none";
-  //     } else {
-  //       content.style.display = "block";
-  //     }
-  //   });
-  // }
 
   menuLinks.forEach(links => {
     links.addEventListener('click', (e) => {
@@ -40,8 +31,9 @@ function menuToggle() {
         currentLink.classList.toggle('active')
     })
   })
-}
+};
 menuToggle();
+
 //Show and Hide Menu
 function showMenu() {
   const showBtn = document.querySelector('#toggle_btn');
@@ -54,5 +46,5 @@ function showMenu() {
   hideBtn.addEventListener('click', () => {
     navMenu.classList.remove('show_navmenu');
   });
-}
+};
 showMenu();

@@ -134,7 +134,7 @@ header .image_container #toggle_btn {
 #wrapper .menu .close_btn_container #close_menu {
   border: none;
   outline: none;
-  background-color: transparent;
+  background-color: #005496;
   color: #fff;
   font-size: 1.8rem;
   font-weight: 300;
@@ -166,14 +166,9 @@ header .image_container #toggle_btn {
   font-weight: 300;
 }
 
-#wrapper .menu .collapsible .icon_down {
-  font-size: 1.4rem;
-  font-weight: 300;
-  display: none;
-}
-
 #wrapper .menu .collapsible .active_icon {
-  display: block;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
 }
 
 #wrapper .menu .collapse_menu {
@@ -320,6 +315,10 @@ header .image_container #toggle_btn {
 
 @media (max-width: 767.98px) {
   header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    left: 0;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
@@ -356,13 +355,14 @@ header .image_container #toggle_btn {
   }
   #wrapper .menu {
     width: 100%;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     height: 0;
     overflow-y: hidden;
     -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease;
+    z-index: 22;
   }
   #wrapper .menu .close_btn_container {
     display: -webkit-box;
@@ -376,7 +376,7 @@ header .image_container #toggle_btn {
     padding: 4px 5px 4px 10%;
   }
   #wrapper .show_navmenu {
-    height: auto;
+    height: 100%;
   }
   #wrapper #main {
     width: 100%;

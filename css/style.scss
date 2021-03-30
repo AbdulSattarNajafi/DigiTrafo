@@ -95,7 +95,7 @@ header {
       #close_menu {
         border: none;
         outline: none;
-        background-color: transparent;
+        background-color: #005496;
         color: #fff;
         font-size: 1.8rem;
         font-weight: 300;
@@ -118,13 +118,8 @@ header {
         font-size: 1.4rem;
         font-weight: 300;
       }
-      .icon_down {
-        font-size: 1.4rem;
-        font-weight: 300;
-        display: none;
-      }
       .active_icon {
-        display: block;
+        transform: rotate(90deg);
       }
     }
     .collapse_menu {
@@ -236,6 +231,9 @@ header {
 }
 @media (max-width: 767.98px) {
   header {
+    position: sticky;
+    top: 0;
+    left: 0;
     justify-content: space-between;
     height: 50px;
     padding: 0 6%;
@@ -264,12 +262,13 @@ header {
     flex-direction: column;
     .menu {
       width: 100%;
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
       height: 0;
       overflow-y: hidden;
       transition: all 0.5s ease;
+      z-index: 22;
       .close_btn_container {
         display: flex;
       }
@@ -281,7 +280,7 @@ header {
       }
     }
     .show_navmenu {
-      height: auto;
+      height: 100%;
     }
     #main {
       width: 100%;
