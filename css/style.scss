@@ -47,25 +47,34 @@ header {
   height: 140px;
   .logo {
     width: 220px;
+    padding: 10px 20px;
     display: flex;
     justify-content: center;
     align-items: center;
     img {
       max-width: 100%;
-      width: 180px;
       height: auto;
     }
   }
   .image_container {
     width: calc(100% - 220px);
     height: 140px;
-    background: url("./../images/header.jpg");
-    background-size: cover;
-    background-position: center bottom;
     display: flex;
     justify-content: flex-end;
-    padding: 0 20px;
+    position: relative;
+    img {
+      max-width: 100%;
+      width: 100%;
+      height: auto;
+    }
+    .laptop_image,
+    .ipad_image {
+      display: none;
+    }
     #toggle_btn {
+      position: absolute;
+      right: 0px;
+      top: 10px;
       border: none;
       outline: none;
       background-color: transparent;
@@ -112,7 +121,6 @@ header {
       justify-content: space-between;
       align-items: center;
       padding: 10px 10px 10px 20px;
-      font-family: sans-serif;
       font-size: 1.2rem;
       font-weight: 500;
       cursor: pointer;
@@ -214,6 +222,16 @@ header {
     }
   }
 }
+@media (max-width: 1199.98px) {
+  header .image_container {
+    .desktop_image {
+      display: none;
+    }
+    .laptop_image {
+      display: block;
+    }
+  }
+}
 /*Responsive styling for medum devices*/
 @media (max-width: 991.98px) {
   #wrapper #main {
@@ -230,6 +248,14 @@ header {
       }
     }
   }
+  header .image_container {
+    .laptop_image {
+      display: none;
+    }
+    .ipad_image {
+      display: block;
+    }
+  }
 }
 /*Responsive styling for Mobile*/
 @media (max-width: 767.98px) {
@@ -237,21 +263,21 @@ header {
     position: sticky;
     top: 0;
     left: 0;
-    justify-content: space-between;
     height: 50px;
     padding: 0 6%;
+    background: #005496;
     .logo {
-      width: 50%;
+      width: 120px;
       justify-content: flex-start;
-      img {
-        width: 100px;
-      }
+      padding: 5px 20px 5px 0;
     }
     .image_container {
-      width: 50%;
+      width: calc(100% - 100px);
       height: 50px;
-      background: #005496;
       padding: 0;
+      .ipad_image {
+        display: none;
+      }
       #toggle_btn {
         display: block;
         &:focus {
