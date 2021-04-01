@@ -20,7 +20,7 @@ body {
   line-height: 1.4;
   font-weight: 400;
   color: black;
-  background-color: #fff;
+  background-color: #005496;
   width: 100%;
   height: 100%;
 }
@@ -157,7 +157,9 @@ header .image_container #toggle_btn {
       -ms-flex-align: center;
           align-items: center;
   padding: 10px 10px 10px 20px;
+  font-family: sans-serif;
   font-size: 1.2rem;
+  font-weight: 500;
   cursor: pointer;
 }
 
@@ -292,7 +294,7 @@ header .image_container #toggle_btn {
   padding: 1rem 0;
 }
 
-/*Responsive styling*/
+/*Responsive styling for medum devices*/
 @media (max-width: 991.98px) {
   #wrapper #main {
     -webkit-box-orient: vertical;
@@ -313,6 +315,7 @@ header .image_container #toggle_btn {
   }
 }
 
+/*Responsive styling for Mobile*/
 @media (max-width: 767.98px) {
   header {
     position: -webkit-sticky;
@@ -346,7 +349,6 @@ header .image_container #toggle_btn {
   header .image_container #toggle_btn:focus {
     outline: none;
   }
-  /**/
   #wrapper {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -383,6 +385,7 @@ header .image_container #toggle_btn {
   }
 }
 
+/*Responsive styling for extra small devices*/
 @media (max-width: 575.98px) {
   #wrapper #main article .wrapper .content_container {
     -webkit-box-orient: vertical;
