@@ -170,6 +170,7 @@ header .image_container #toggle_btn {
   padding: 10px 10px 10px 20px;
   font-size: 1.2rem;
   font-weight: 500;
+  font-family: serif;
   cursor: pointer;
 }
 
